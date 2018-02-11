@@ -1,8 +1,15 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <h2>Motivation.ie</h2>
-    <p>
-     Home page
-    </p>
+    <img class="center" src="https://dkx2n65sfmxqe.cloudfront.net/wp-content/themes/motivation-ie/assets/images/new-logo-notag.png" alt="">
+    <div class="list list-inset">
+        <label class="item item-input">
+            <input type="text" placeholder="Username" ng-model="data.username">
+        </label>
+        <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="data.password">
+        </label>
+    </div>
+    <button class="button button-block button-custom" ng-click="login()">Login</button>
+    <div class="button button-block button-custom" ui-sref="recipes">Temp Link to Recipes</div>
   </ion-content>
 </ion-view>
