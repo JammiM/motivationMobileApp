@@ -26,3 +26,31 @@ body {
 em,i{
     font-style:italic;
 }
+
+
+.button.button-custom-green {
+  border-color: transparent;
+  background-color: #8dc63f;
+  color: #fff; }
+  .button.button-custom-green:hover {
+    color: #fff;
+    text-decoration: none; }
+  .button.button-custom-green.active, .button.button-custom-green.activated {
+    border-color: #a2a2a2;
+    background-color: #8dc63f; }
+  .button.button-custom-green.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #8dc63f; }
+  .button.button-custom-green.button-icon {
+    border-color: transparent;
+    background: none; }
+  .button.button-custom-green.button-outline {
+    border-color: #8dc63f;
+    background: transparent;
+    color: #8dc63f; }
+    .button.button-custom-green.button-outline.active, .button.button-custom-green.button-outline.activated {
+      background-color: #8dc63f;
+      box-shadow: none;
+      color: #fff; }
