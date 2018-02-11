@@ -1,0 +1,54 @@
+<ion-view view-title="Register">
+  <ion-nav-bar class="bar-custom">
+            <!-- <ion-nav-bar class="bar-positive"> -->
+              <ion-nav-back-button></ion-nav-back-button>
+            </ion-nav-bar>
+
+
+
+
+
+  <ion-content class="padding">
+    <div class="list"> <!-- list list-inset  -->
+      <label class="item item-input item-floating-label">
+        <span class="input-label">First Name</span>
+        <input type="text" placeholder="First Name" ng-model="data.firstName">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Last Name</span>
+        <input type="text" placeholder="Last Name" ng-model="data.lastName">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="Email" ng-model="data.email">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Age</span>
+        <input type="number" placeholder="Age" ng-model="data.age">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Password</span>
+        <input type="number" placeholder="Password" ng-model="data.age">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Verify Password</span>
+        <input type="number" placeholder="Password" ng-model="data.age">
+      </label>
+      <ul class="list">
+        <li class="item item-toggle">
+           Do you want to receive a weekly newsletter ?
+           <label class="toggle toggle-royal">
+             <input type="checkbox">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+        </li>
+      </ul>
+
+
+
+      <button class="button button-block button-custom" ng-click="login()">Register</button>
+    </div>
+  </ion-content>
+</ion-view>
