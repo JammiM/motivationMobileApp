@@ -1,36 +1,52 @@
 <ion-view view-title="Account">
-  <ion-content>
-    <div class="list">
-
+  <ion-content class="padding">
+    <div class="list card">
+      <ion-item class="profile-item">
+        <div class="profile-picture big-profile-picture">
+          <img src="http://motivate.life/wordpress/wp-content/uploads/2016/06/DrLarocque-carre.jpg">
+        </div>
+        <h2 class="profile-name dark">Mike</h2>
+        <div class="profile-info">I'm the IP</div>
+      </ion-item>
+      <div class="item item-divider">
+        General Info
+      </div>
       <a class="item item-icon-left" href="#">
-        <i class="icon ion-email"></i>
-        Check mail
-      </a>
-
-      <a class="item item-icon-left item-icon-right" href="#">
-        <i class="icon ion-chatbubble-working"></i>
-        Call Ma
-        <i class="icon ion-ios-telephone-outline"></i>
-      </a>
-
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-mic-a"></i>
-        Record album
+        <i class="icon ion-email green-icon-color"></i>
+        Email
         <span class="item-note">
-          Grammy
+          Mike@mot.ie
         </span>
       </a>
-
       <a class="item item-icon-left" href="#">
-        <i class="icon ion-person-stalker"></i>
-        Friends
-        <span class="badge badge-assertive">0</span>
+        <i class="icon ion-chatbubble-working green-icon-color"></i>
+        Phone
+        <span class="item-note">
+          98989898
+        </span>
       </a>
-
+      <div class="item item-divider">
+        Progress
+      </div>
+      <a class="item item-icon-left" href="#">
+        <i class="icon ion-arrow-graph-up-right green-icon-color"></i>
+        Completed tasks
+        <span class="badge badge-balanced">10</span>
+      </a>
+      <a class="item item-icon-left" href="#">
+        <i class="icon ion-clipboard green-icon-color"></i>
+        Tasks to complete
+        <span class="badge badge-assertive">10</span>
+      </a>
+      <div class="item item-divider">
+        Settings
+      </div>
        <ion-toggle  ng-model="settings.enableFriends">
            Enable Updates
        </ion-toggle>
 
-    </div>
+    </div><!-- list card  -->
+
+    <button class="button button-block button-custom" ng-click="login()">Log out</button>
   </ion-content>
 </ion-view>
