@@ -19,9 +19,40 @@ body {
     color: #fff;
 }
 
+
+
+.bar-custom .button.button-clear{
+  border-color: transparent;
+      background: none;
+      box-shadow: none;
+      color: #fff;
+      font-size: 17px;
+
+}
+
+/*
+.bar .button.back-button, .bar button.back-button{
+
+}
+*/
+
 .green-color {
   background-color: #8dc63f;
 }
+
+.green-divider{
+  color: #fff;
+  background-color: #8dc63f;
+  font-weight:bold;
+}
+
+
+.green-outline{
+  border: 1.2px solid #8dc63f;
+}
+
+
+
 
 
 .green-icon-color{

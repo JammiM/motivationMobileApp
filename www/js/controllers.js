@@ -1,6 +1,29 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('LoginCtrl', function($scope, $state){ //}, $ionicHistory) {
+//  $scope.myGoBack = function () { $ionicHistory.goBack(); };
+  $scope.goToMainMenu = function(){
+    $state.go('tab.main-menu');
+  }
+})
+
+.controller('RegisterCtrl', function ($scope, $ionicHistory) {
+  $scope.myGoBack = function () {
+      $ionicHistory.goBack();
+  };
+})
+
+.controller('MainMenuCtrl', function ($scope, $state, $ionicHistory) {
+    $scope.myGoBack = function () {
+        $ionicHistory.goBack();
+    };
+    $scope.goToRecipes = function(){
+      $state.go('recipes');
+    };
+    $scope.goToAccount = function(){
+      $state.go('account');
+    };
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
