@@ -1,10 +1,58 @@
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', function($scope, $state){ //}, $ionicHistory) {
+.controller('LoginCtrl', function($scope, $state,  $ionicModal){ //}, $ionicHistory) {
 //  $scope.myGoBack = function () { $ionicHistory.goBack(); };
+
+  $scope.data = {};
+
   $scope.goToMainMenu = function(){
-    $state.go('tab.main-menu');
+    if ($scope.data.username == 'mike' && $scope.data.password == 'password') {
+      $state.go('main-menu');
+    } else {
+      $scope.modal.show();
+    }
   }
+
+  $scope.goToRegister = function(){
+    $state.go('register');
+  }
+
+
+
+  $ionicModal.fromTemplateUrl('templates/login-modal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+    $scope.openModal = function() {
+      $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+    // Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+    });
+
+
+
+
+
+
+
+
+
+
 })
 
 .controller('RegisterCtrl', function ($scope, $ionicHistory) {

@@ -9,35 +9,7 @@
             <input type="password" placeholder="Password" ng-model="data.password">
         </label>
     </div>
-    <!--<button class="button button-block button-custom" ng-click="goToMainMenu()">Login</button> -->
-    <button class="button button-block button-custom" ui-sref="main-menu">Login</button>
-    <div class="button button-block button-custom" ui-sref="register">Register</div>
-  <!--  <div class="button button-block button-custom-green" ui-sref="recipes">Temp Link to Recipes</div> -->
+    <button class="button button-block button-custom" ng-disabled="(data.username && data.password) ? false : true" ng-click="goToMainMenu()">Login</button>
+    <div class="button button-block button-custom" ng-click="goToRegister()">Register</div>
   </ion-content>
 </ion-view>
-
-
-
-
-
-
-
-<!--
-
-<ion-view view-title="login">
-    <ion-content>
-      <img class="center" src="https://dkx2n65sfmxqe.cloudfront.net/wp-content/themes/motivation-ie/assets/images/new-logo-notag.png" alt="">
-
-        <div class="list list-inset">
-          <label class="item item-input green-outline">
-            <input type="text" placeholder="First Name">
-          </label>
-          <label class="item item-input green-outline">
-            <input class="green-outline" type="text" placeholder="Last Name">
-          </label>
-          <button class="button button-block button-custom" data-ui-sref="tab">Login</button>
-          <button class="button button-block button-custom">Register</button>
-        </div>
-    </ion-content>
-</ion-view>
--->
