@@ -44,15 +44,6 @@ angular.module('starter.controllers', [])
       // Execute action
     });
 
-
-
-
-
-
-
-
-
-
 })
 
 .controller('RegisterCtrl', function ($scope, $ionicHistory) {
@@ -71,6 +62,11 @@ angular.module('starter.controllers', [])
     $scope.goToAccount = function(){
       $state.go('account');
     };
+
+    $scope.goToVidMenu = function() {
+      $state.go('videomenu');
+     };
+
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -92,8 +88,28 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('vidMenuCtrl', function ($scope, $state, $ionicHistory) {
+   $scope.myGoBack = function () {
+        $ionicHistory.goBack();
+    };
+})
+
+.controller('vidCtrl', function ($scope, $state, $ionicHistory) {
+   $scope.myGoBack = function () {
+        $ionicHistory.goBack();
+    };
+   $scope.goToVideo = function() {
+    $state.go('video');
+   };
+})
+
+.controller('AccountCtrl', function($scope,$state) {
   $scope.settings = {
     enableFriends: true
   };
+
+  $scope.logOut = function() {
+    $state.go('login');
+   };
+
 });

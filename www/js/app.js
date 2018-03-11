@@ -59,6 +59,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   //  }
   })
 
+  .state('videomenu', {
+    url: "/videomenu",
+    templateUrl: "templates/video-menu.html",
+    controller: 'vidMenuCtrl'
+  })
+  .state('video', {
+      url: "/video",
+      templateUrl: "templates/video.html",
+      controller: 'vidCtrl'
+  })
+
+
   .state('tab.chats', {
       url: '/chats',
       views: {
@@ -89,14 +101,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
 
-  .state('tab.account', {
+  .state('account', {
     url: '/account',
-    views: {
-      'tab-account': {
+  //  views: {
+  //    'tab-account': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
-      }
-    }
+//      }
+//    }
   });
 
 
