@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -71,23 +71,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
 
-  .state('tab.chats', {
+  .state('chats', {
       url: '/chats',
-      views: {
-        'tab-chats': {
+    //  views: {
+    //    'tab-chats': {
           templateUrl: 'templates/tab-chats.html',
           controller: 'ChatsCtrl'
-        }
-      }
+  //      }
+    //  }
     })
-    .state('tab.chat-detail', {
+    .state('chat-detail', {
       url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
+    //  views: {
+    //    'tab-chats': {
           templateUrl: 'templates/chat-detail.html',
           controller: 'ChatDetailCtrl'
-        }
-      }
+    ///    }
+    //  }
     })
 
     .state('recipe1', {

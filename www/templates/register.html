@@ -22,11 +22,14 @@
       </label>
       <label class="item item-input item-floating-label">
         <span class="input-label">Password</span>
-        <input type="number" placeholder="Password" ng-model="data.age">
+        <input type="text" placeholder="Password" ng-model="data.password1">
       </label>
       <label class="item item-input item-floating-label">
         <span class="input-label">Verify Password</span>
-        <input type="number" placeholder="Password" ng-model="data.age">
+        <input type="text" placeholder="Password" ng-model="data.password2">
+      </label>
+      <label class="item item-input item-floating-label wrong-password-warning" ng-show="(data.password1 != data.password2) && (data.password1 != null) && (data.password2 != null)">
+        <p class="text-center">The passwords do not match</p>
       </label>
       <ul class="list">
         <li class="item item-toggle">
@@ -39,7 +42,7 @@
            </label>
         </li>
       </ul>
-      <button class="button button-block button-custom" ui-sref="main-menu">Register</button>
+      <button class="button button-block button-custom" ng-disabled="((data.firstName && data.lastName) && (data.email && data.age) && (data.password1 && data.password2)) ? false : true" ui-sref="main-menu">Register</button>
     </div>
   </ion-content>
 </ion-view>

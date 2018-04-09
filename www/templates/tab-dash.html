@@ -1,15 +1,24 @@
 <ion-view view-title="Login">
   <ion-content class="padding">
     <img class="center" src="https://dkx2n65sfmxqe.cloudfront.net/wp-content/themes/motivation-ie/assets/images/new-logo-notag.png" alt="">
-    <div class="list list-inset">
-        <label class="item item-input green-outline">
-            <input type="text" placeholder="Username" ng-model="data.username">
-        </label>
-        <label class="item item-input green-outline">
-            <input type="password" placeholder="Password" ng-model="data.password">
-        </label>
+        <form class="list" ng-submit="register(person)" id="myForm" accept-charset="utf-8">
+                <div class="list list-inset">
+                  <label class="item item-input green-outline">
+                      <input type="text" placeholder="Username" ng-model="data.username">
+                    <!--  <input type="email" name="" id="cemail" value="" placeholder="email" />  -->
+                  </label>
+                  <label class="item item-input green-outline">
+                      <input type="password" placeholder="Password" ng-model="data.password">
+                    <!--  <input type="password" name="" id="cpassword" placeholder="Password" value="" />  -->
+                  </label>
+        </form>
+          <button class="button button-block button-custom" ng-disabled="(data.username && data.password) ? false : true" ng-click="goToMainMenu()" type="submit" id="clogin">login</button>
+          <button class="button button-block button-custom" ng-click="goToRegister()" type="submit" id="csignUp">Register</button>
+      <!--    <button class="button button-block button-custom" type="submit" id="csignOut" class="hidden">sign out</button>  -->
+<!--
     </div>
     <button class="button button-block button-custom" ng-disabled="(data.username && data.password) ? false : true" ng-click="goToMainMenu()">Login</button>
     <div class="button button-block button-custom" ng-click="goToRegister()">Register</div>
+  -->
   </ion-content>
 </ion-view>

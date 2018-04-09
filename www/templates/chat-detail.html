@@ -1,8 +1,34 @@
 <ion-view view-title="{{chat.name}}">
+  <!--
   <ion-content class="padding">
     <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
     <p>
       {{chat.lastText}}
     </p>
+-->
+    <ion-content class="has-header">
+      <img class="full-image" ng-src="{{chat.mainimg}}" alt="{{chat.name}}">
+      <p class="padding">{{chat.desc}}</p>
+      <div class="card green-outline">
+        <div class="item item-divider green-divider">
+          Ingredients
+        </div>
+        <div ng-repeat="ingredient in chat.ingredients">
+          <div class="row" ng-if="$even">
+            <div class="col-50">{{chat.ingredients[$index]}}</div>
+            <div class="col-50">{{chat.ingredients[$index + 1]}}</div>
+          </div>
+        </div>
+      </div><!-- card -->
+      <div class="card green-outline">
+        <div class="item item-divider green-divider">
+          Directions
+        </div>
+        <div class="item item-text-wrap">
+          <ul class="list" ng-repeat="step in chat.steps">
+            <li class="item">{{step}}</li>
+          </ul>
+        </div>
+      </div>
   </ion-content>
 </ion-view>

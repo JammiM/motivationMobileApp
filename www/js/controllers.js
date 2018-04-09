@@ -1,9 +1,18 @@
+
+
+
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', function($scope, $state,  $ionicModal){ //}, $ionicHistory) {
-//  $scope.myGoBack = function () { $ionicHistory.goBack(); };
-
+.controller('LoginCtrl', function($scope, $state,  $ionicModal ){ //}, $ionicHistory) {
   $scope.data = {};
+
+  //fb object
+/*
+  var rootRef = firebase.database().ref().child('angular');
+  var ref = rootRef().child('object');
+  this.object = $firebaseObject(ref);
+
+*/
 
   $scope.goToMainMenu = function(){
     if ($scope.data.username == 'mike' && $scope.data.password == 'password') {
@@ -16,8 +25,6 @@ angular.module('starter.controllers', [])
   $scope.goToRegister = function(){
     $state.go('register');
   }
-
-
 
   $ionicModal.fromTemplateUrl('templates/login-modal.html', {
       scope: $scope,
@@ -67,6 +74,9 @@ angular.module('starter.controllers', [])
       $state.go('videomenu');
      };
 
+     $scope.goToChats = function() {
+       $state.go('chats');
+      };
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

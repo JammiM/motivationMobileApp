@@ -1,7 +1,13 @@
-<ion-view view-title="Chats">
+<ion-view view-title="filtered recipes">
   <ion-content>
+    <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="recipes">
+      </label>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+
+<!--
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/chats/{{chat.id}}">
         <img ng-src="{{chat.face}}">
         <h2>{{chat.name}}</h2>
         <p>{{chat.lastText}}</p>
@@ -10,6 +16,12 @@
         <ion-option-button class="button-assertive" ng-click="remove(chat)">
           Delete
         </ion-option-button>
+      </ion-item>   -->
+      <ion-item class="item-thumbnail-left item-icon-right item-remove-animate" ng-repeat="chat in chats | filter:recipes" type="item-text-wrap" href="#/chats/{{chat.id}}">
+        <img ng-src="{{chat.mainimg}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.desc}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
   </ion-content>
