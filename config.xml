@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MyApp</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <name>Motivation.ie App</name>
+    <description>The offical app for Motivation.ie</description>
+    <author email="hi@ionicframework" href="http://ionicframework.com/">Team Sheepdog</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -86,5 +86,9 @@
         <variable name="CHANNEL_NAME" value="initialChannel" />
         <variable name="UPDATE_METHOD" value="background" />
     </plugin>
+    <preference name="intercom-app-id" value="pdl95za2" />
+    <preference name="intercom-ios-api-key" value="ios_sdk-8792108b86525d15598b777c70ca26c8e1bc2763" />
+    <preference name="intercom-android-api-key" value="android_sdk-73feb177a0b4bbb1237a92ead379b1e3eef22962" />
+    <plugin name="cordova-plugin-intercom" spec="^5.0.1" />
     <engine name="android" spec="7.0.0" />
 </widget>

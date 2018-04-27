@@ -1,7 +1,7 @@
 
 
 
-angular.module('starter.controllers', [])
+angular.module('starter.controllers',  ['audioPlayer', 'ngSanitize'])
 
 .controller('LoginCtrl', function($scope, $state,  $ionicModal ){ //}, $ionicHistory) {
   $scope.data = {};
@@ -77,18 +77,23 @@ angular.module('starter.controllers', [])
      $scope.goToChats = function() {
        $state.go('chats');
       };
+
+      $scope.goToAudio = function() {
+        $state.go('audio');
+       };
+
+
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
 
-  $scope.chats = Chats.all();
+
+.controller('ChatsCtrl', function($scope, Chats, $ionicLoading) {
+  $ionicLoading.show();
+  Chats.all().then(function(chats) {
+      $scope.chats = $scope.chats = chats;
+      $ionicLoading.hide();
+  });
+
   $scope.remove = function(chat) {
     Chats.remove(chat);
   };
@@ -122,4 +127,40 @@ angular.module('starter.controllers', [])
     $state.go('login');
    };
 
+})
+
+
+
+
+
+
+
+
+
+//   audio
+
+//var app = angular.module('App', ['audioPlayer', 'ngSanitize']);
+.controller('Ctrl', ['$scope',
+  function($scope, audioPlayer) {
+    //init playlist for audioPlayer
+    $scope.audio = null;
+    $scope.audioPlaylist = [];
+
+    $scope.play = function() {
+      $scope.audio.play();
+      console.log(audioPlayer);
+    };
+
+    $scope.pause = function() {
+      $scope.audio.pause();
+      console.log(audioPlayer);
+    };
+
+  }
+
+])
+.controller('Ctrl', function($scope, $sce) {
+  $scope.trustSrc = function(src) {
+    return $sce.trustAsResourceUrl(src);
+  }
 });

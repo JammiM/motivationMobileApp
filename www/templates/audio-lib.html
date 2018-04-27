@@ -1,5 +1,10 @@
 <ion-view view-title="Audio Library">
-  <ion-content class="padding">
+  <ion-content class="padding"ng-init="podcasts = [
+          {source: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', title:'This is a title', description:'This is the description', thumbnail: 'http://placehold.it/300x125'},
+          {source: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3', title:'This is a title', description:'This is the description', thumbnail: 'http://placehold.it/300x125'}
+
+        ]">
+
     <div class="list list-inset">
       <a class="item item-avatar" href="#">
         <img src="https://ionicframework.com/img/docs/barrett.jpg">
@@ -18,6 +23,31 @@
         <h2>Day 3 The ABCD's of Emotions</h2>
         <p>Clare</p>
       </a>
+    </div>
+
+
+    <div class="card" ng-repeat="podcastMeta in podcasts">
+      <div class="item item-text-wrap">
+        <ul class="example-animate-container">
+        <li class="animate-repeat">
+              <div class="episode">
+                <div class="metaInfo">
+                  <img src="{{podcastMeta.thumbnail}}" style="width:100%;" />
+                  <br />
+                  <br />
+                  <h3>{{podcastMeta.title}}</h3>
+                  <p>{{podcastMeta.description}}</p>
+                </div>
+                <div ng-controller="Ctrl">
+                  <audio controls>
+                      <source src="{{trustSrc(podcastMeta.source)}}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                  </audio>
+                </div>
+          </div>
+        </li>
+      </ul>
+      </div>
     </div>
   </ion-content>
 </ion-view>

@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','firebase'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -7,7 +7,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','f
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
+      cordova.plugins.intercom.registerIdentifiedUser({userId: "123456"});
+      cordova.plugins.intercom.setLauncherVisibility('VISIBLE');
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
@@ -98,7 +99,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','f
         url: "/rec2",
         templateUrl: "templates/recipe2.html"
     })
-
+    .state('audio', {
+        url: '/audio',
+      //  views: {
+      //    'tab-chats': {
+            templateUrl: 'templates/audio-lib.html',
+            controller: 'ChatsCtrl'
+    //      }
+      //  }
+      })
 
 
   .state('account', {
